@@ -1,4 +1,28 @@
+<p align="center">
+  <img src="assets/banner.png" alt="headercheck" width="100%">
+</p>
+
 # headercheck
+
+**HTTP security header auditor with A+ to F grades.** Single file, Python 3 standard library only, zero dependencies.
+
+<p>
+  <a href="https://001-sec.github.io/headercheck/"><img alt="site" src="https://img.shields.io/badge/site-001--sec.github.io%2Fheadercheck-ff2d47?style=flat-square"></a>
+  <img alt="python" src="https://img.shields.io/badge/python-3.8%2B-ff5c70?style=flat-square">
+  <img alt="deps" src="https://img.shields.io/badge/dependencies-none-2b2b35?style=flat-square">
+  <img alt="license" src="https://img.shields.io/badge/license-MIT-2b2b35?style=flat-square">
+</p>
+
+> **Authorized use only.** Check only sites you own or are authorized to test. It is a verification instrument for defenders and learners, in the same category as open-source scanners and audit utilities.
+
+## Quickstart
+
+```bash
+curl -O https://raw.githubusercontent.com/001-sec/headercheck/main/headercheck.py
+python3 headercheck.py --help
+```
+
+Landing page: https://001-sec.github.io/headercheck/
 
 Audits the HTTP security headers of any site you are authorized to test and grades them A+ to F, with concrete fix advice for every gap.
 
@@ -24,4 +48,12 @@ https://example.com  ->  HTTP 200  grade D (34%)
 ```
 
 ## License
-MIT
+MIT, see [LICENSE](LICENSE).
+
+## Contributing
+
+Issues and pull requests are welcome. Keep it dependency-free and single-file.
+
+---
+
+<p align="center">Built by <a href="https://github.com/001-sec">001-sec</a></p>
