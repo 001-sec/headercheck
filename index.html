@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>headercheck - HTTP security header auditor</title>
+<style>
+:root{--bg:#0d1117;--fg:#e6edf3;--mut:#8b949e;--acc:#ffa657;--card:#161b22;--bord:#30363d}
+*{margin:0;box-sizing:border-box}body{background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:48px 24px}
+h1{font-size:2.6rem;letter-spacing:-1px}h1 span{color:var(--acc)}
+.tag{color:var(--mut);font-size:1.1rem;margin:8px 0 28px}
+pre{background:var(--card);border:1px solid var(--bord);border-radius:10px;padding:18px;overflow-x:auto;font-size:.9rem;margin:24px 0}
+code{font-family:"SF Mono",Menlo,monospace}.k{color:var(--acc)}.c{color:#ff7b72}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:28px 0}
+.card{background:var(--card);border:1px solid var(--bord);border-radius:10px;padding:20px}
+.card h3{font-size:1rem;margin-bottom:6px}.card p{color:var(--mut);font-size:.9rem}
+.foot{color:var(--mut);font-size:.85rem;margin-top:40px;border-top:1px solid var(--bord);padding-top:20px}
+</style></head><body><div class="wrap">
+<h1>header<span>check</span></h1>
+<p class="tag">Grade any site's HTTP security headers in seconds, with the exact fix for every gap.</p>
+<pre><code><span class="k">$</span> python3 headercheck.py https://example.com
+
+https://example.com  ->  HTTP 200  grade <span class="c">D (34%)</span>
+  [F] strict-transport-security   MISSING
+       HSTS: forces HTTPS. Add 'max-age=63072000; includeSubDomains; preload'.
+  [leak] server: ECS (nyb/1D18)  (consider removing)</code></pre>
+<div class="grid">
+<div class="card"><h3>Eight checks, one grade</h3><p>HSTS, CSP, nosniff, frame options, referrer and permissions policies, COOP/CORP - scored A+ to F.</p></div>
+<div class="card"><h3>Fix advice included</h3><p>Every missing header comes with the value to set, not just a red X.</p></div>
+<div class="card"><h3>Posture over time</h3><p>JSON output and CI-friendly exit codes track your grade release over release.</p></div>
+</div>
+<pre><code><span class="k">$</span> python3 headercheck.py https://app.example.com -o posture.json</code></pre>
+<p class="foot">Check only sites you own or are authorized to test. MIT License.</p>
+</div></body></html>
